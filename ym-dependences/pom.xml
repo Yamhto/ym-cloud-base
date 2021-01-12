@@ -21,7 +21,18 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <spring.cloud-version>2020.0.0</spring.cloud-version>
         <spring.boot-version>2.4.1</spring.boot-version>
+        <lombok-sersion>1.18.16</lombok-sersion>
     </properties>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok-sersion}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>

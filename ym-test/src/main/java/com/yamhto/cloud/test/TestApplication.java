@@ -1,5 +1,6 @@
 package com.yamhto.cloud.test;
 
+import com.yamhto.cloud.web.starter.validate.EnableValidate;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -13,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Version 1.0
  */
 @SpringBootApplication
+@EnableValidate
 public class TestApplication {
 
     public static void main(String[] args) {
