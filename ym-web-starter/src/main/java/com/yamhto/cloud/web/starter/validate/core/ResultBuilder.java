@@ -11,6 +11,10 @@ package com.yamhto.cloud.web.starter.validate.core;
  */
 public class ResultBuilder {
 
+    public static <T> Result<T> buildSuccess() {
+        return new Result<>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg(), null);
+    }
+
     public static <T> Result<T> buildSuccess(String code, String msg) {
         return new Result<>(code, msg, null);
     }

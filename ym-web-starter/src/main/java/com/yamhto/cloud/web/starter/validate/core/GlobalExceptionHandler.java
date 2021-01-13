@@ -1,4 +1,4 @@
-package com.yamhto.cloud.web.starter.validate;
+package com.yamhto.cloud.web.starter.validate.core;
 
 import com.yamhto.cloud.web.starter.validate.core.Result;
 import com.yamhto.cloud.web.starter.validate.core.ResultBuilder;
