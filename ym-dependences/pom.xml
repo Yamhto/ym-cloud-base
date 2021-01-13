@@ -10,6 +10,8 @@
     <modules>
         <module>../ym-test</module>
         <module>../ym-web-starter</module>
+        <module>../ym-log-starter</module>
+        <module>../ym-jackson-starter</module>
     </modules>
     <packaging>pom</packaging>
 

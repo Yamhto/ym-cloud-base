@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
+import java.util.Date;
+
 /**
  * 类描述：
  *
@@ -23,5 +25,7 @@ public class Model {
 
     @ValidateEnum(intValues = {1, 2}, message = "1:MAN ---- 2:WOMAN")
     private int sex;
+
+    private Date birth;
 
 }

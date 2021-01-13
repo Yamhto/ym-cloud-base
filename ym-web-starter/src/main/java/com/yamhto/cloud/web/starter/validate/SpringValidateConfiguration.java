@@ -21,7 +21,7 @@ public class SpringValidateConfiguration {
 
     @Bean
     public GlobalExceptionHandler globalExceptionHandler() {
-        LOG.info("Init Spring Validate Starter");
+        LOG.info("Init Spring Validate Starter ....");
         return new GlobalExceptionHandler();
     }
 
