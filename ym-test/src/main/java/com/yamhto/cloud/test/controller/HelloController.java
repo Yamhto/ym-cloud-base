@@ -1,9 +1,7 @@
 package com.yamhto.cloud.test.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.yamhto.cloud.jackson.starter.JacksonHelper;
+import com.yamhto.cloud.log.starter.Log;
 import org.hibernate.validator.constraints.Length;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,8 +21,6 @@ import javax.validation.constraints.NotBlank;
 @Validated
 public class HelloController {
 
-    @Autowired
-    private JacksonHelper jacksonHelper;
 
     @GetMapping("hello")
     public String hello(@RequestParam(value = "length", required = false)
@@ -33,12 +29,15 @@ public class HelloController {
     }
 
     @PostMapping("model")
-    public String model(@RequestBody @Valid Model model) {
-        try {
-            return jacksonHelper.generate(model);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-            return "";
-        }
+    @Log
+    public Model model(@RequestBody @Valid Model model) {
+        return model;
+    }
+
+
+    @GetMapping("noArgs")
+    @Log
+    public String noArgs() {
+        return "NoArgs======";
     }
 }

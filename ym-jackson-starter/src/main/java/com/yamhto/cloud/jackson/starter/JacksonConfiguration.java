@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
@@ -20,7 +19,6 @@ import java.text.SimpleDateFormat;
  * @Date 2021/1/13 2:46 下午
  * @Version 1.0
  */
-@Import(JacksonHelper.class)
 public class JacksonConfiguration {
 
     private final static Logger LOG = LoggerFactory.getLogger(JacksonConfiguration.class);
@@ -30,7 +28,7 @@ public class JacksonConfiguration {
      *
      * @return
      */
-    @Bean
+    @Bean("jacksonObjectMapper")
     @Primary
     public ObjectMapper jacksonObjectMapper(Jackson2ObjectMapperBuilder builder) {
         LOG.info("Init Jackson Starter .....");

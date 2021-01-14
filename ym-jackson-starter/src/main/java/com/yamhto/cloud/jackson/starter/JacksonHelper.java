@@ -2,9 +2,9 @@ package com.yamhto.cloud.jackson.starter;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 /**
  * 类描述：JacksonHelper jackson 工具类
@@ -17,8 +17,11 @@ import java.io.IOException;
  */
 public class JacksonHelper {
 
-    @Autowired
-    private ObjectMapper mapper;
+    private static ObjectMapper mapper = new ObjectMapper();
+
+    static {
+        mapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
+    }
 
     private JacksonHelper() {
     }
@@ -26,14 +29,14 @@ public class JacksonHelper {
     /**
      * Serialize any Java value as a String.
      */
-    public String generate(Object object) throws JsonProcessingException {
+    public static String generate(Object object) throws JsonProcessingException {
         return mapper.writeValueAsString(object);
     }
 
     /**
      * Deserialize JSON content from given JSON content String.
      */
-    public <T> T parse(String content, Class<T> valueType) throws IOException {
+    public static <T> T parse(String content, Class<T> valueType) throws IOException {
         return mapper.readValue(content, valueType);
     }
 }
