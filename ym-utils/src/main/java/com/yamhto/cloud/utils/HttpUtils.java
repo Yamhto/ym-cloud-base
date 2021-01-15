@@ -1,4 +1,4 @@
-package com.yamhto.cloud.log.starter;
+package com.yamhto.cloud.utils;
 
 import javax.servlet.http.HttpServletRequest;
 

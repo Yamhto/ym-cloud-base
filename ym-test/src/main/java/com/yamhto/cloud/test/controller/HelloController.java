@@ -23,15 +23,19 @@ public class HelloController {
 
 
     @GetMapping("hello")
+    @Log
     public String hello(@RequestParam(value = "length", required = false)
-                        @NotBlank @Length(min = 6, max = 12) String length) {
+                        @NotBlank @Length(min = 6, max = 12) String length,
+                        @RequestParam(value = "name", required = false) String name) {
         return "Hello World !!" + length;
     }
 
     @PostMapping("model")
     @Log
     public Model model(@RequestBody @Valid Model model) {
-        return model;
+        Model res = new Model();
+        res.setSex(1);
+        return res;
     }
 
 

@@ -10,26 +10,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ym-log-starter</artifactId>
+    <artifactId>ym-utils</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-        <dependency>
-            <artifactId>ym-jackson-starter</artifactId>
-            <groupId>com.yamhto</groupId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <artifactId>ym-utils</artifactId>
-            <groupId>com.yamhto</groupId>
-            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

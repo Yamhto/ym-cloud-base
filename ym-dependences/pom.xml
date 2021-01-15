@@ -12,6 +12,7 @@
         <module>../ym-web-starter</module>
         <module>../ym-log-starter</module>
         <module>../ym-jackson-starter</module>
+        <module>../ym-utils</module>
     </modules>
     <packaging>pom</packaging>
 
