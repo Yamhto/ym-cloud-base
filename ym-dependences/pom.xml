@@ -13,6 +13,7 @@
         <module>../ym-log-starter</module>
         <module>../ym-jackson-starter</module>
         <module>../ym-utils</module>
+        <module>../ym-mapstruct-starter</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -25,6 +26,7 @@
         <spring.cloud-version>2020.0.0</spring.cloud-version>
         <spring.boot-version>2.4.1</spring.boot-version>
         <lombok-sersion>1.18.16</lombok-sersion>
+        <mapstruct-version>1.3.1.Final</mapstruct-version>
     </properties>
 
     <dependencies>
@@ -35,6 +37,7 @@
             <version>${lombok-sersion}</version>
             <scope>provided</scope>
         </dependency>
+
     </dependencies>
 
     <dependencyManagement>
@@ -55,25 +58,50 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- 引入 mapstruct 依赖 -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct-version}</version>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
+
     <build>
-        <plugins>
-            <!--spring boot maven plugin-->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring.boot-version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
+        <pluginManagement>
+            <plugins>
+                <!--spring boot maven plugin-->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring.boot-version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
+
+
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <name>releases</name>
+            <url>http://10.10.35.166:8081/repository/maven-releases/</url>
+            <uniqueVersion>true</uniqueVersion>
+        </repository>
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>snapshots</name>
+            <url>http://10.10.35.166:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
