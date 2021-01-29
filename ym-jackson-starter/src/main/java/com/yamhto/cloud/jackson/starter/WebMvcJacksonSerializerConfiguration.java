@@ -21,7 +21,7 @@ public class WebMvcJacksonSerializerConfiguration {
     private final static Logger LOG = LoggerFactory.getLogger(WebMvcJacksonSerializerConfiguration.class);
 
     @Bean
-    MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter(@Qualifier("jacksonObjectMapper") ObjectMapper objectMapper) {
+    public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter(@Qualifier("jacksonObjectMapper") ObjectMapper objectMapper) {
         LOG.info("web mvc 使用 jackson 序列化 配置");
         MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
         converter.setObjectMapper(objectMapper);

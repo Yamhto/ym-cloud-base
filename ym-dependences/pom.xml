@@ -13,7 +13,8 @@
         <module>../ym-log-starter</module>
         <module>../ym-jackson-starter</module>
         <module>../ym-utils</module>
-        <module>../ym-mapstruct-starter</module>
+        <module>../ym-rest-template-starter</module>
+        <module>../ym-mybatis-plus-starter</module>
     </modules>
     <packaging>pom</packaging>
 
