@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.yamhto.cloud.web.starter.validate.jackson.JacksonConfiguration,\
+com.yamhto.cloud.web.starter.validate.jackson.WebMvcJacksonSerializerConfiguration

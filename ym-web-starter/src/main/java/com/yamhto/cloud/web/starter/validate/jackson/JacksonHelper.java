@@ -1,4 +1,4 @@
-package com.yamhto.cloud.jackson.starter;
+package com.yamhto.cloud.web.starter.validate.jackson;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;

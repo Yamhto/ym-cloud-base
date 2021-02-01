@@ -11,7 +11,6 @@
         <module>../ym-test</module>
         <module>../ym-web-starter</module>
         <module>../ym-log-starter</module>
-        <module>../ym-jackson-starter</module>
         <module>../ym-utils</module>
         <module>../ym-rest-template-starter</module>
         <module>../ym-mybatis-plus-starter</module>

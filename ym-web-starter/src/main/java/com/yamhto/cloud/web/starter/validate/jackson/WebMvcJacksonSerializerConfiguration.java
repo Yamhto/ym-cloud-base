@@ -1,4 +1,4 @@
-package com.yamhto.cloud.jackson.starter;
+package com.yamhto.cloud.web.starter.validate.jackson;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;

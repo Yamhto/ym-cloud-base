@@ -23,11 +23,6 @@
             <groupId>org.apache.httpcomponents</groupId>
             <version>4.3.6</version>
         </dependency>
-       <!-- <dependency>
-            <artifactId>ym-jackson-starter</artifactId>
-            <groupId>com.yamhto</groupId>
-            <version>${project.version}</version>
-        </dependency>-->
     </dependencies>
 
 </project>

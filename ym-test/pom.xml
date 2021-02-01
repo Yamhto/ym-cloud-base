@@ -19,11 +19,6 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <artifactId>ym-jackson-starter</artifactId>
-            <groupId>com.yamhto</groupId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
             <artifactId>ym-log-starter</artifactId>
             <groupId>com.yamhto</groupId>
             <version>${project.version}</version>

@@ -1,7 +1,5 @@
 package com.yamhto.cloud.rest.template;
 
-import com.yamhto.cloud.rest.template.core.BaseReq;
-import com.yamhto.cloud.rest.template.core.BaseResp;
 import org.apache.commons.codec.binary.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
@@ -26,30 +24,29 @@ import java.util.List;
  * @Date 2021/1/27 3:16 下午
  * @Version 1.0
  */
-public class RestTemplateHelper<I extends BaseReq, O extends BaseResp> {
+public class RestTemplateHelper<I, O> {
 
     @Autowired
     private RestTemplate restTemplate;
 
     public ResponseEntity<O> invoke(String url, HttpMethod httpMethod, HttpEntity<I> httpEntity) {
-        if (StringUtils.equals(httpMethod.name(), HttpMethod.GET.name())) {
-            return doGet(url, httpEntity);
-        } else {
-            return doPost(url, httpEntity);
-        }
+        return StringUtils.equals(httpMethod.name(), HttpMethod.GET.name()) ? this.doGet(url, httpEntity) : this.doPost(url, httpEntity);
     }
 
     private ResponseEntity<O> doGet(String url, HttpEntity<I> httpEntity) {
         UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url);
-        I body = httpEntity.getBody();
-        List<Field> declaredFields = Collections.unmodifiableList(getExtendsFields(body));
-        declaredFields.forEach(field -> {
-            try {
-                builder.queryParam(field.getName(), field.get(body));
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-        });
+
+        if (null != httpEntity) {
+            I body = httpEntity.getBody();
+            List<Field> declaredFields = Collections.unmodifiableList(getExtendsFields(body));
+            declaredFields.forEach(field -> {
+                try {
+                    builder.queryParam(field.getName(), field.get(body));
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
 
         return restTemplate.exchange(builder.build(true).toUri(), HttpMethod.GET, httpEntity, new ParameterizedTypeReference<O>() {
         });
