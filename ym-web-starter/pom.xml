@@ -13,6 +13,10 @@
     <artifactId>ym-web-starter</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
         <!--web dependence-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

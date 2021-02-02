@@ -14,6 +14,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
             <artifactId>ym-web-starter</artifactId>
             <groupId>com.yamhto</groupId>
             <version>${project.version}</version>
